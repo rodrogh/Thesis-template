@@ -45,6 +45,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{gensymb}
 
 %% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[pdftex]{graphicx}
@@ -60,7 +61,7 @@
 %\usepackage[square, sort, numbers, authoryear,sort&compress]{natbib}
 \usepackage{ifthen}
 \usepackage{ifpdf}
-\usepackage{subfigure}
+%\usepackage[tight]{subfigure}
 
 %% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{color}
@@ -110,7 +111,7 @@
 %--> http://me.in-berlin.de/~miwie/tex-refs/html/latex-packages.html
 %-->
     \usepackage[ pdftex, plainpages = false, pdfpagelabels, 
-                 pdfpagelayout = useoutlines,
+                 pdfpagelayout = SinglePage,
                  bookmarks,
                  bookmarksopen = true,
                  bookmarksnumbered = true,
