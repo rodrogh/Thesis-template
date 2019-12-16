@@ -476,13 +476,13 @@
 %the top of the page. The abstract itself does not appears in a quote
 %environment so you can get more in.
 
-\newenvironment{abstractslong} {\begin{alwayssingle} \pagestyle{empty}
+\newenvironment{abstractslong} {\begin{alwayssingle} \pagestyle{plain}
   \begin{center}
   \vspace*{1.5cm}
   {\Large \bfseries  Abstract}
   \end{center}
-  \vspace{0.5cm} \begin{quote}}
-{\end{quote}\end{alwayssingle}}
+  \vspace{0.5cm} 
+  \end{alwayssingle}}
 
 %The abstractseparate environment is for running of a page with the abstract
 %on including title and author etc as required to be handed in separately
