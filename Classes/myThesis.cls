@@ -37,9 +37,9 @@
 
 
 \usepackage{textcomp} %solves \texteuro problem in bib
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[ansinew]{inputenc}
-\usepackage{lmodern} %font
+%\usepackage{lmodern} %font
 
 %% Math Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath}
@@ -50,7 +50,6 @@
 %% Packages for Graphics & Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[pdftex]{graphicx}
 
-
 \usepackage{fancyhdr}
 \usepackage{eucal}
 
@@ -58,7 +57,7 @@
 \usepackage[UKenglish]{babel}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage[perpage]{footmisc}
-%\usepackage[square, sort, numbers, authoryear,sort&compress]{natbib}
+\usepackage[square, sort, numbers, authoryear,sort&compress]{natbib}
 \usepackage{ifthen}
 \usepackage{ifpdf}
 %\usepackage[tight]{subfigure}
@@ -67,7 +66,6 @@
 \usepackage{color}
 \usepackage{upgreek} %upright greek letters
 \usepackage{physics}
-\usepackage[square,comma,sort&compress]{natbib}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{url}
 \renewcommand{\UrlFont}{\small\tt}
@@ -76,12 +74,10 @@
 \newdateformat{yeardate}{ \THEYEAR}
 
 
-
 %Bibliography
 %uncomment next line to change bibliography name to references for Book document class
 \renewcommand{\bibname}{References}
 % note that this doesn't do much if you later define another bibliography style 
-
 
 % Nomenclature
 %\usepackage{nomencl}
@@ -164,8 +160,8 @@
 
 %A4 settings
 \ifpdf
-   \pdfpageheight=350mm
-   \pdfpagewidth=260mm
+   \pdfpageheight=297mm
+   \pdfpagewidth=210mm
 \else
    \setlength{\paperheight}{350mm}
    \setlength{\paperwidth}{260mm}
@@ -183,33 +179,37 @@
 \setlength{\hoffset}{0.00cm}
 \setlength{\voffset}{0.00cm}
 
-%\setlength{\evensidemargin}{1.0cm}
-%\setlength{\oddsidemargin}{-0.54cm}
-%\setlength{\topmargin}{1mm}
-%\setlength{\headheight}{1.36cm}
-%\setlength{\headsep}{1.00cm}
-%\setlength{\textheight}{21.84cm}
-%\setlength{\textwidth}{16.5cm}
-%\setlength{\marginparsep}{1mm}
-%\setlength{\marginparwidth}{3cm}
-%\setlength{\footskip}{2.36cm}
+% \setlength{\evensidemargin}{1.0cm}
+% \setlength{\oddsidemargin}{-0.54cm}
+% \setlength{\topmargin}{1mm}
+% \setlength{\headheight}{1.36cm}
+% \setlength{\headsep}{1.00cm}
+% \setlength{\textheight}{21.84cm}
+% \setlength{\textwidth}{16.5cm}
+% \setlength{\marginparsep}{1mm}
+% \setlength{\marginparwidth}{3cm}
+% \setlength{\footskip}{2.36cm}
 
 %Below are the original formats...put back in when you get a chance.
 
-
-
-\setlength{\evensidemargin}{1.96cm}
-%\setlength{\oddsidemargin}{-0.54cm}
+\setlength{\evensidemargin}{1.0cm}
+% \setlength{\oddsidemargin}{-0.54cm}
 \setlength{\topmargin}{1mm}
 \setlength{\headheight}{1.36cm}
 \setlength{\headsep}{1.00cm}
-\setlength{\textheight}{20.84cm}
-\setlength{\textwidth}{14.5cm}
+\setlength{\textheight}{21.84cm}
+\setlength{\textwidth}{16.5cm}
 \setlength{\marginparsep}{1mm}
 \setlength{\marginparwidth}{3cm}
 \setlength{\footskip}{2.36cm}
 
-
+%Define new margins for book binding. This overwrides the template options above
+%\usepackage[showframe]{geometry}
+\usepackage{geometry}
+\newgeometry{inner=4cm,outer=2cm}
+\setlength{\textheight}{23.5cm}
+\setlength{\textwidth}{15cm}
+\setlength{\footskip}{1.5cm}
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter. #1 }}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
@@ -407,17 +407,12 @@
 {\end{quote}\end{alwayssingle}}
 
 % IPSTATEMENT
-%
-% The acknowledgements environment puts a large, bold, centered 
-% "Acknowledgements" label at the top of the page. The acknowledgements
-% themselves appear in a quote environment, i.e. tabbed in at both sides, and
-% on its own page.
 
 \newenvironment{ipstatement}
 {\pagestyle{plain}
 \begin{alwayssingle}
 \begin{center}
-\vspace*{1.5cm}
+\vspace*{-2.0cm}
 {\Large \bfseries Intellectual Property Statement}
 \end{center}
 \vspace{0.5cm}
@@ -478,11 +473,12 @@
 
 \newenvironment{abstractslong} {\begin{alwayssingle} \pagestyle{plain}
   \begin{center}
-  \vspace*{1.5cm}
+  %\vspace*{1.5cm}
+  \vspace*{-2.0cm}
   {\Large \bfseries  Abstract}
   \end{center}
-  \vspace{0.5cm} 
-  \end{alwayssingle}}
+  \vspace{0.5cm}} 
+  {\end{alwayssingle}}
 
 %The abstractseparate environment is for running of a page with the abstract
 %on including title and author etc as required to be handed in separately

@@ -1,4 +1,4 @@
-\chapter{Soft Materials Modelling: Neural Networks}
+\chapter{Data-driven modelling: Artificial Neural Networks}
 
 \section{Introduction}
 
@@ -7,6 +7,8 @@ This is the last part to write. The chapter will include the following:
 \begin{itemize}
     \item (Introudction) Reintroduce the problematic when using model-driven approaches such as mathematical models for this application. Then, mention the current research focused on neural networks as a potential solution.
     \item Theory and definition of a neural network (NN)
+    \item Multilayer Perceptron (MLP). Some information available in \cite{aulova2017determination} page 337.
+    \item Radial Basis Function (RBF). This is a feedforward neural network which utilizes the radial-basis activation function in its hidden layer, and it only has one hidden layer, \cite{aulova2017determination}.
     \item Literature focused on NNs. Mention relevant applications and their methodology.
     \item Method1: Describe the methodology used for the systematic approach of a single material (Maybe include all of them in one go)
     \item Results1: Discuss obtained performance
@@ -14,6 +16,173 @@ This is the last part to write. The chapter will include the following:
     \item Results2: Discuss the obtained performance
     \item Simulink validation. This step will justify the needs of a experimental work. The main objective of this section is to analysis the performance of NN in real-time when implemented as part of a control system
 \end{itemize}
+
+\section{Artificial Neural Networks}
+
+Artificial Neural Networks (ANNs) are computational systems inspired in the structure and functionality of the biological nervous system. Neurons, a specific type of cell, are the basic components in the brain. They form connections with a vast number of other neurons, allowing us to remember, think, and apply previous knowledge to our present actions. The basic functionality of a neuron is to receive information in its inputs from many sources, to combine it, to apply a nonlinear operation, and to output the end result. Moreover, neurons are capable of specializing for a specific task by amplifying or reducing the impact of their individual inputs. Neurons are also capable of reorganizing themselves in complex interconnected clusters in a three-dimensional space, called biological neural networks, in where the information flows from one group of neurons to the other.
+
+Similarly, Artificial Neural Networks are composed of many basic components, known as artificial neurons, working in parallel. The clustering found in biological neural networks, can be replicated in ANNs by creating layers, containing many neurons, which can be interconnected between each other in different ways. The simplest structure of an ANN is composed of three layers: and input layer, a hidden layer, and an output layer. As the name suggest, the input and output layers interface the ANN with the outside world. The main learning process happens in the hidden layer. The way in which the interconnections between these three layers are form, are mainly dependent on the application. The strength of each interconnection depends on a weighting factor, enabling the artificial neuron to amplify or reduce the contribution of a specific input. The fine tuning of this weights, performed in a process called training, allows ANNs to specialize in a particular task,i.e. allow them to learn. The latter highlights the capability of ANNs to simulate two key functionalities of the human brain, which are: acquiring knowledge from the environment through a learning process, and storing this knowledge in the form of inter-neuron connection strengths, i.e. synaptic weights. The capability of learning from experience, i.e. experimental data, make ANNs particularly useful when dealing with complex scientific and engineering problems where an adequate analytical description is not available, or is too complex  \cite{zhang2003artificial,trebar2007predicting}.
+
+In the context of ANNs, the analogous to the biological neuron, i.e. an artificial neuron, is described as follows:
+
+
+where... describe the analogy between the biological neuron and the artificial neuron. Many artificial neurons can be grouped together in what is called a layer. In the simplest ANNs there are only three layers, an input layer, a hidden layer, and an output layer. Nevertheless, ANNs can have as many layers as desired, simulating the clustering in biological neural networks. Describe the functionality of each layer, which simulates the biological component.
+
+Depending on how the information flows inside the ANNs it can receive different names. For example, in feedforward ANNs the information flows from the input layer to the output layer only. 
+
+
+. DO I HAVE to mentioon generalization?
+
+What are artificial neural networks?
+
+1 
+
+ANNs are inspired on the biological nervous system and can be used to solve a wide variety of complex scientific and engineer problems. ANNs have the capability to learn from examples, i.e. experimental data, similar to their biological counterparts, which means that they can be trained to find solutions to complex functional relationships without any prior assumptions about the problem at hand. The latter highlights the capability of ANNs to self-organizing to match the relationship between inputs and outputs.  \cite{zhang2003artificial}
+
+2 The basic idea behind artificial neural networks is to replicate the biological structures and functionality of the brain. ANNs are widely used to ascertain nonlinear relationships between parameters when no other adequate analytical description is available or is too complex to implement. The latter is possible due to the learning from experience, and generalization capabilities found in ANNs. However, the learned knowledge is hidden inside the structure and difficult to extract and interpret. 
+
+Drastic jump to multilayer perceptrons. A type of ANN called multilayer perceptron consists of basic computational units, called neurons, which are organized in different layers. Each neuron receives information in its input either from inputs to the neural network or from outputs of neurons in the previous layers, The following paragraphs deal with the mathematical formula of ANNs r\cite{trebar2007predicting}
+
+3
+
+4
+
+5
+
+Which authors have used them for prediction of viscoelasticity in soft materials?
+
+1 Nowadays, the use of Artificial Neural Networks in the field of composite materials, such as elastomers, for the prediction of the mechanical behaviour has increased. 
+
+The overfitting problem
+
+There are two methods for improving generalization: early stopping and regularization.
+
+\section{ANN for Modelling of Soft Materials }
+
+Artificial Neural Networks have been implemented in a wide number of applications, such as: forecasting, control, power systems, robotics, signal processing, manufacturing, pattern recognition and optimization REF. At the time of writing this document, the available literature about the implementation of ANNs for the modelling of the complex behaviour of soft materials, specifically elastomers, was scarce. However, in 2019 there was a notorious increment in the published papers focusing on modelling soft materials using ANNs which highlights the relevance of this field of research.
+
+The review paper of Zhang et al. about the implementation of ANNs in polymer composite applications, found that the available literature on the subject was scarce at that time \cite{zhang2003artificial}. Moreover, the documented applications ranged from modelling of the fatigue life of the material, to prediction of tribological and dynamic mechanical properties of composite materials. This review paper provided very insightful evidence of the potential of ANNs for applications such as: design of new composite materials, optimization of the manufacturing process, and modelling the relationship between different manufacturing parameters. From the reviewed works, the authors were able to find a well defined sequence of actions which describes the process of implementing ANNs for the prediction of the mechanical properties of composite materials:
+
+\begin{enumerate}
+    \item \textbf{Data collection:} the first step in designing an ANN is to collect enough data from experimentation. On top of this, processing of the collected data, mainly to filter out noise, might be required.
+    \item \textbf{ANN design and training:} the second step is to design the ANNs depending on the application at hand. This involves deciding on the best parameters to use, in terms of: number of neurons, number of hidden layers, training algorithm and neuron's activation function. Also, this step involves the training of the proposed ANN.
+    \item \textbf{Test of the trained network:} this step is about assessing the prediction and generalization capabilities of the trained ANN. The former is commonly assessed by looking at the difference between predicted and experimental values, as a general rule, the lower the error, the better the prediction. The generalization of the network is assessed by statistical methods such as p-fold cross-validation and the coefficient of determination.
+    \item \textbf{Use of the trained network:} the last step is to use the trained network to simulate new data or for prediction.
+\end{enumerate}
+
+The latter process highlights the large number of configurations available when tackling a modelling problem. Constant advances in the field of machine learning add more options to the choice of parameters to be selected when designing an ANN. Due to this, many works in the literature focus on a single ANN architecture to test and validate for a specific application. Even when designing an ANN for a specific applications, the process of optimizing each of the available parameters is very time-consuming, and sometimes is done by trial and error instead of . 
+
+
+The following paragraphs describe the relevant works on the field of composite materials, paying special attention to the ones about modelling the stress response of composite materials, which shows the large diversity in the choice of the ANN parameters.
+
+{ \Huge Now starts the listing of all the relevant papers }
+Zhang et al. were one of the pioneers in applying ANN to polymer composites for a wide range of applications. For example, in their work REF
+
+Tasks for 4/Jan/2020: Quickly review the works from Zhang et al. and add them to the previous paragraphs. These works can be found in the references from Zhang review paper. There is a book which they have authored based on the review paper, so this book is redundant. Describe the training methods and statistical validation used in these works. When this is done I can move into coding the matlab algorithm for assessing the impact on the selection of the neural networks input. Also I need to continue the progress on Chapter 1. This is the first chapter Abbas will look at and must be ready by next Monday.
+
+\section{Methodology: Design process of the ANN}
+
+As previously discussed in SECTION, modelling the strain-dependent stress response of soft materials is critical for the implementation of reliable control systems in soft robotic applications. This has been attempted with the piece-wise linearized Standard Linear Solid model. The benefits and limitations of the latter model are detailed in SECTION, being its main limitation the incapability of modelling the stress response of the soft materials under different strain rates. Therefore, an alternative modelling approach is proposed, a data-driven one based on ANN. In accordance to the documented research on ANN, which have been successful in modelling the mechanical properties of thermoplastic elastomers, the hyper parameters of the developed ANN in this work are summarized in \autoref{tbl:ANN_parameters}. The fixed hyper parameters are the one selected based on the literature, whereas the optimized hyper parameters are the ones in which an optimization process is performed to achieve better generalization capabilities from the developed ANN. 
+
+\begin{table}[!t]
+    \centering
+    \caption{Summary of the fixed and optimized hyper parameters for the proposed ANN}
+    \begin{tabular}{|c|c|}
+    \hline
+    \multicolumn{2}{|c|}{Fixed Hyper Parameters} \\
+    \hline
+    Topology                    & Feedforward Neural Network \\
+    Number of Neurons           & 1 - 20 \\
+    Activation Function on HL   & Tansig\\
+    Activation Function on OL   & Purelin\\
+    Training Algorithm          & Bayesian Regularization\\
+    Outputs                     & Stress\\
+    \hline
+    \multicolumn{2}{|c|}{Optimized Hyper Parameters}\\
+    \hline
+    Hidden Layers               & 1 - 2 \\
+    Inputs                      & Different Combinations\\
+    Data Set Size               & 100 - 3000\\
+    \hline
+    \end{tabular}
+    \label{tbl:ANN_parameters}
+\end{table}
+
+The following subsections describe the design and optimization process of the proposed ANN.
+
+\subsection{Processing of the dataset}
+
+\subsection{Analysis: Impact of the selection of inputs/outputs}
+
+The first hyper parameter to optimize is the selection of inputs. For this application, in which the modelling of the strain-dependent stress response of the material is desired, the obvious choice is to include both the strain and the strain rate, i.e. the change of the strain with respect to time, as inputs of the ANN. However, in the scenario where the developed ANN is deployed as part of a control system in a real application, having a derivative might add unnecessary complexity to the system. An alternative to circumvent the limitations of having the strain rate as input, the past values of the strain can be provided to the ANN, allowing the network to learn the time dependency of the stress response without having to differentiate any input. The latter configuration describe a very basic form of a Recurrent Neural Network. 
+
+In this work, both described scenarios are analysed. On the one hand, the ANN which have derivative terms in their inputs are classified in here as Rate-Dependent. On the other hand, the ANN which instead of derivative terms is presented with current and past values of their inputs, are classified as Rate-Independent. The following FIGURES illustrate the different architecture of ANN analysed in this subsection.
+
+
+
+The selection of input parameters is based on a 10-fold cross-validation approach, in which each of the proposed ANN is trained 10 times. Also, the data using for training and the initial weights of the ANN are randomized in each training session. The mean square error from each training session is extracted. The generalization error of each ANN configuration is then defined as the mean value from all the training sessions. 
+
+Initially, the complete dataset from one of the available soft materials is used. The dataset from the Fluorocarbon Rubber is identified as the best candidate due to its fairly even number of tests per strain rate. The latter is in favour of preventing any bias from occurring when dividing the dataset at random, which could cause the ANN to perform better on a specific strain rate and poorly on the others. As described in TABLE, some of the studied materials are biased towards a specific strain rate. This potential hazard in dealt with in following sections. Nevertheless, to initially assess which of the proposed combination of input parameters achieve the best generalization, we use the Fluorocarbon Rubber dataset. 
+
+In order to isolate the impact of the selection of input parameters on the ANN generalization, some hyper-parameters are defined as constant as described in TABLE. For example, the impact of the datasize used for training is isolate dby extracting 100 samples per test included in the Fluorocarbon Rubber dataset. The extracted data is divided into training and testing subsets, containing 90\% and 10\% of the data respectively. The testing subset is important because it assess the performance of the ANN when unknown data is presented to it. This is done after each training session by calculating the mse value. Finally, the ANN with the lowest generalization error is considered to be the one with the best generalization capabilities. The results from the optimization process are illustrated in FIGURES.
+
+Reminder: Create the plots using the version 1 script of the ANNNeuronTestHandler.mlx. Also, add some useful reference to the paragraphs above to improve their content. Also, reference the tables from other sections correctly.
+%Table with ANN parameters
+%Figure with the 3-D bar chart with the MSE for each training session
+%Figure with the 2-D bar chart with the generalization error
+
+
+\begin{enumerate}
+    \item Select the complete dataset of one of the studied soft material which has the most evenly spread number of tests among the strain rate of interest.
+    \item Define a measurement of performance parameter to assess each ANN generalization
+    \item Divide the dataset to dedicate 90\% of the data for training and 10\% for testing.
+    \item 
+    
+    \item Pseudocode for the selection of the best input combination
+    \item Select the material which have similar number of dataset per strain rate
+    \item Extract 100 datapoints from each dataset
+    \item Split the extracted data in training and testing sets, using a 90/10 proportion. 
+    \item Use the extracted data as is to train the ANN ten times
+    \item Record the mse achieved during training for each session
+    \item Identify the training session with the lowest performance
+    \item Calculate the cross-validation error as the mean of all the recorded mse
+    \item Repeat this process for every proposed configuration of ANN
+    \item Identify the ANN with the lowest cross-validation error and the lowest individual session error
+    \item Compare these values to identify the best configuration
+\end{enumerate}
+    
+
+
+Almost a decade ago, the available literature about the implementation of Artificial Neural Networks for the prediction of soft materials properties was very limited and mainly focused on the modelling of fatigue and wear \cite{zhang2003artificial}. The wide adoption of these materials for engineering applications motivated the implementation of ANNs for the prediction of the mechanical behaviour of soft materials. In the field of Soft Robotics for human assistance, the usage of soft materials has increased due to their elasticity, light weight and inherent compliance. Moreover, there is a growing interest in trying to imitate the functionality of the human musculoskeletal system by taking advantage of the viscoelasticity found in most soft materials.
+
+\begin{enumerate}
+    \item The first implementation of ANN on modelling the viscoelasticity of composite materials was performed by Zhang et al. \cite{zhang2002dynamic}. The viscoelasticity of a reinforced composite material is characterized by performing a dynamic mechanical thermo-analysis. From this test, the storage modulus and damping of the material are extracted, two properties which describe the stiffness of the material under dynamic loading. This work is focused on the effect of reinforcing a series of Polytetrafluoroethylene (PTFE) based composites with different amount of Polyetheretherketone (PEEK) and carbon fibres (CF). The effect of temperature was also studied. 
+    
+    The proposed ANN was a simple multilayer feedforward network with a single hidden layer. The inputs of the ANN are the temperature, and the volume percentage of PTFE, PEEK and CF, in the tested material. Whereas the outputs of the network are the storage modulus and the damping of the material. The prediction capabilities of the network were tested when having only one output, either the storage modulus or the damping, and having two outputs, and using the same amount of training set for both scenarios. A total of 25 neurons were used in the hidden layer. In summary, the proposed ANNs had the following structure: 4-[25]\textsubscript{1}-1 and  4-[25]\textsubscript{1}-2.
+    
+    The authors selected a tan-sigmoidal transfer function between the input and hidden layer, and a linear transfer function between the hidden and the output layer. The motivation behind this combination of transfer functions is to avoid limiting the output to having a small range. The authors opted for the Bayesian regularization backpropagation training algorithm, which uses the Levenberg-Marquardt optimization method to minimize the sum of square errors of a linear combination of weights and biased. The latter allows the algorithm to decide which neurons contribute the least on the solution of the problem and to shut them down during the training process, avoiding over-fitting. When using this algorithm, the main dataset is divided into training and a testing datasets. Although, the authors do not specify the percentage of the dataset used for training and testing. In this work, the coefficient of determination \[ R^{2} \] is used to assess the prediction capabilities of the trained ANN. This parameter was calculated for a total of 50 randomly selected test datasets and the percentage of $R^{2}\geq0.9$ values was extracted.
+    
+    They found that the amount of training sets required to achieve a 100 percentage of R values was different between the storage modulus and the damping. In the case for the storage modulus, only 40 training sets were required, whereas for the damping, more than 120 training sets were required. The authors conclude that the storage modulus had a stronger relationship with the selected inputs of the network. Although, it could also be the case that the damping of the material has a more complex nonlinear relationship which was unable to be modelled with the proposed ANN. Furthermore, they found that having two outputs instead of one had a similar effect in the amount of training set required to achieve a 100 percentage R values.
+    
+    Having successfully trained the ANNs, the authors used it to generate three-dimensional plots describing the relationship between the temperature and percentage of reinforcing materials, with the storage modulus and damping of the material for the space in which experimental data was not available. This allowed the understanding of how some material parameters and measuring conditions influence the dynamic mechanical properties.
+    \begin{itemize}
+        \item How this paper is relevant to my thesis?
+        \item The methodology they used, directly assess the impact on the ANN performance based on the selection of inputs. I  could adopt this assessment process to validate which selection of inputs is better for predicting the stress response. If this is not demanding enough, I could perform this for all of the materials.
+    \end{itemize}
+    
+    \item In the paper \cite{tho2004artificial}, the number of neurons are determined by trial an error. Neurons are added one by one during the training process. The MSE during training and validation is constantly monitored. The neural network will start over-fitting the data once the MSE during validation starts increasing while the MSE during training keeps decreasing. In this point, the adding of neurons is stopped. In here, the combination of tangent-sigmoid function on the hidden layer and linear function on the output layer is used as well.
+    \item Review of \cite{khan2019fabrication}. ANN is one of the most powerful approaches used in material sciences for predicting the physical, mechanical and tribological properties of complex materials. When accurate mathematical-based solutions are not available or too complex to implements, the biologically inspired computational method of ANN has emerged as an advanced modelling tool. The main function of ANN is to assemble the pattern from given data. ANN can learn from examples, like their biological counterparts, and can be trained to describe the functional relationship of complex phenomenons without previous knowledge of their nature. ANNs were first used to solve complex engineering problems in 1940. However, due to their ease of use and time-saving benefits, they have become very popular and are now used for many different applications, such as fore-casting, control, robotics, power systems, signal processing, manufacturing, pattern recognition and optimization. 
+    ANNs are computing systems that mimic the biological nerve cell system of human brain. These are adaptive models that can describe the complex connections between input parameters and output properties otherwise not possible with any analytical function. All the basic elements of ANNs are modelled after human brain; therefore, the terminology is borrowed from neuroscience accordingly. The most important element of human brain is specific cell known as neuron which enables us to memorize, think and use previous experiences to our daily life actions. 
+    Section 2.1 of this paper has a good definition of Artificial Neural Networks, use it for the thesis.
+    \item This work is very recent and directly linked to my research: \cite{rodriguez2019application}. In here, the stress-strain data from a single thermoplastic elastomers is used to train a FFNN. Thereafter, the same ANN architecture is used to predict the stress response of seven different thermoplastic elastomers. Which suggest that my initial methodology is correct, optimize the ANN acrchitecture for one material, and this same ANN  architecture could be useful for other materials. I have taken many important notes in the paper itself. The dataset used in this paper is very small, around 50 samples per strain-stress curve. I might need to use smaller datasets to make the training process faster and be inline with the literature. This work have steps of 2\% strain in the experimental data used for training the NN, which makes the NN biased towards large stress values, where the change in strain is small. My work could focus on filling this gap in the knowledge. I don't have to criticize the work they are doing. I can see this as two different approaches.
+    \item This paper, \cite{wang2007review} gives a good explanation of commonly used validation techniques. In ANN the cross-validation technique is very common, however, the leave one out approach is not enough to validate the model accuracy. The p-fold cross-validation approach seems to be the most reliable.
+    \item In this work \cite{xu2019artificial} an ANN which accounts for the strain rate of the materials is trained with three different strain rates. The trained and validated ANN was used to predict the elastic modulus of the materials under unknown strain rates.
+    \item In \cite{koskela2003neural,paliwal2009neural} there is important information about p-fold cross-validation and bootstrapping, two statistical methods commonly used for assessing the performance of ANN.
+    \item The work of Jung et al. \cite{jung2006neural} is one of the first to try describing the viscoelasticity (time and rate-dependent properties) of materials using ANNs in combination with Finite Element Analysis. This paper might be relevant to be mentioned in a later part of the thesis. 
+\end{enumerate}
+
+
+
 
 \subsection{Work history}
 \begin{itemize}
@@ -146,15 +315,39 @@ The next paragraph will describe the works being done on stress-strain curve pre
     \end{itemize}
 \end{itemize}
 
-To do list:
+{\Huge I have realised that the only way forward is to finish writing the literature review for Artificial Neural Networks. In this way I will systematically review the measurements of performance used in the relevant works for the prediction of the mechanical properties of viscoelastic materials. This is How I will do it:}
+\begin{itemize}
+    \item Write an introductory paragraph describing the theoretical background of artificial neural networks. Include in here an illustration of the artificial neuron and a simple multilayer perceptron.
+    \item Make a selection of the papers relevant to the prediction of viscoelastic properties in soft materials. Group this in a specific folder in Mendeley
+    \item Following the latter introductory paragraph, write a literature review of the selected papers, focusing on the methodology, how they assessed the performance of the ANN and their results
+    \item If enough data is available from the literature review, compile a table summarizing the relevant parameters of the reviewed papers. This could include: ANN topology, number of hidden layers, number of neurons, training algorithm, activation function, measurement of performance, results.
+    \item Based on the latter, I now can select a methodology to implement OR validate the already selected methodology which include the assessment of:
+    \begin{itemize}
+        \item 7 different combinations of inputs/outputs
+        \item 2 different training algorithm
+        \item 3 different activation functions
+        \item 1-30 range of number of neurons
+        \item Possibility to extend it to two hidden layers
+    \end{itemize}
+\end{itemize}
+
+
+{\Huge To do list: }
 \begin{itemize}
     \item Develop Matlab algorithm to assess the performance of the proposed topologies based on the three steps optimization done in one of the papers above
     \begin{itemize}
-        \item Retrain neural network for the Natural Rubber material using a slightly different training set. Extract one test dataset from each strain rate and don't include this in the training set.
+        \item (Done - Documentation needed) Retrain neural network for the Natural Rubber material using a slightly different training set. Extract one test dataset from each strain rate and don't include this in the training set.
     \item During training, store the achieved mse performance and the R coefficient during training, testing and validation for each neuron combination.
     \item Finally, calculate the mse performance of the trained network using the unknown dataset
     \item Make sure to store the previous information inside the final mat-file using proper variables to allow the plotting of this information in a different section.
     \end{itemize}
+    \item Some papers perform the searching of the optimal number of neurons by trial and error. In here we do the searching by extracting the prediction error for  range of number of neurons.
+\end{itemize}
+
+{\Huge IMPORTANT QUESTIONS:}
+\begin{itemize}
+    \item When assessing the performance of NNs with different numbers of neurons, should I keep the data division constant? or randomize it in every training session? Keeping it constant allows a direct comparison
+    \item I might need to start writing the theory behind it to decide once and for all what to do with the performance of my neural networks
 \end{itemize}
 
 Introduction Paragraph: Important Question: In the field of implementing neural networks for the prediction of the stress-strain curve of soft materials, What are the most common topologies used? This is the base line for this chapter and the systematic analysis of testing different topologies of neural network.
@@ -163,14 +356,6 @@ IDEA: The analysis of the performance of the neural network can be justified by 
 2. Maximal linear correlation coefficient R for the available strain rates, simultaneously
 The latter might require something else than a simple algorithm. In that case, when a proper optimization algorithm is required, such as GA, this idea is might not be in the scope of this project.
 
-
-Things to explain in this section:
-\begin{itemize}
-    \item Mathematical definition of a Neural Network
-    \item Literature implementing Neural Networks for modelling of soft materials
-    \item Multilayer Perceptron (MLP). Some information available in \cite{aulova2017determination} page 337.
-    \item Radial Basis Function (RBF). This is a feedforward neural network which utilizes the radial-basis activation function in its hidden layer, and it only has one hidden layer, \cite{aulova2017determination}.
-\end{itemize}
 
 \subsection{Description of the systematic approach chosen to test the different topologies of NNs} 
  In this section I will discuss about the relevant work done on modelling soft materials (elastomers) using neural networks
@@ -224,3 +409,11 @@ The paper: Application of radial basis neural network to transform viscoelastic 
 The paper Viscoelastic analysis of a sleeve based on the BP neural network, make use of MSE. Review this paper because it has important theory about the generalization of neural networks depending on the error during training and during validation
 
 This paper is the oldest regarding the implementation of Neural Networks for prediction of the viscoelastic behaviour of composite materials: Prediction of nonlinear viscoelastic behavior of polymeric composites using an artificial neural network. I have to review this carefully.
+
+\subsection{The second comparison analysis}
+
+This subsection presents the process performed to identify the most relevant inputs for the prediction of the stress response of the materials. A total of seven different configurations of inputs and outputs are proposed.
+
+I am incorrectly using the transfer function logsig, which has an output range of {0,1}. Because I am using a normalized input of {-1,1}, the logsig function is not able to model half of those values correctly. Impressive enough, the MSE values are not that bad, but of course they are the highest among all the three transfer functions. I have to retrain networks using the proper input normalizing factor for this specific transfer function.
+
+How do I divide the dataset? Currently, I am isolating the experimental data from a single tensile strength test to use it as the testing dataset, i.e. unknown data for the ANN. Should I make a brief analysis of the dataset collected per each material?.

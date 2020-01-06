@@ -1,4 +1,4 @@
-\chapter{Characterization of the Soft Materials Behaviour}
+\chapter{Characterization of the Soft Materials Behaviour} \label{ch:characterizationSoft}
 
 \textbf{ \huge To-Do List}
 
@@ -59,7 +59,7 @@ Stress relaxation and creep are both time-dependent phenomenons observed in elas
 
 Hysteresis in a material is defined as the mechanical energy dissipated as heat when the material is undergoing deformations. This phenomenon is observed in a loading-unloading cycle, where the stress trajectory of the material while loading (extension) is different than the trajectory during unloading (retraction), as illustrated in Figure \ref{fig:hysteresis}. Hysteresis is mainly caused by internal friction of the molecular chain, also known as Van der Waals forces, in both elongation and contraction. Van der Waals forces are caused by the momentary bonding experienced between molecular chains that are close together. This constant making and breaking of bonds caused by deforming a material produces heat which ultimately becomes a mechanism to dissipate mechanical energy. This energy is represented as the enclosed area in Figure \ref{fig:hysteresis}. Stress relaxation and creep play a role in the amount of hysteresis experienced by a material in each consecutive loading-unloading cycle. The effect of hysteresis alone can be isolated by subjecting the elastomer to a conditioning process (preconditioning) in which it undergo several loading-unloading cycles until the stress response stops changing with every new cycle.
 
-\begin{figure}[h!]
+\begin{figure}[hb!]
     \centering
     \includegraphics[width=0.7\textwidth]{HysteresisExample.png}
     \caption{Hysteresis in stress-strain curve. \cite{Bauman2008}.}
@@ -82,9 +82,9 @@ In this section, the mechanical tests of tensile strength and stress relaxation,
 
 In a tensile strength test the material is loaded to failure at a certain deformation (strain) rate. The main purpose of this test is to extract the stress-strain curve of the material. From the stress-strain curve, the elastic properties of the material, such as stiffness, elastic modulus, ultimate strain, ultimate stress, elastic limit and yield strength, can be extracted. The stress-strain curve of elastomers (Figure \ref{fig:tensile}) has three main regions: the toe region, the elastic region, and the yield/failure region. In the toe region, the internal molecular chains of the material are misaligned, experiencing greater friction forces which greatly oppose to initial deformations. In contrast, when the molecular chains are aligned the friction forces decrease and the material deforms as a whole. The latter represent the elastic region, in which the slope of the curve (stiffness) is slightly smaller than in the toe-region. The elastic region of many materials exhibit a proportional or linear relationship between the stress and the strain. This is not the case for elastomers, where most of them exhibit a non-linear relationship. When the internal molecular chains have been elongated to its maximum length they demand higher forces to fail, this is observed as a peak in the load-elongation curve which also highlights the beginning of the yield/failure region \cite{Bauman2008}.
 
-The tensile strength test performed in this work is in accordance with the Standard Test Method for Vulcanized Rubbers - Tension (ASTM D412) \cite{astmd412}. In here, it is recommended to elongate the material specimen until failure using a deformation rate of 500 mm/min, whenever possible. However, under certain circumstances where the previous deformation rate is not suitable, the test can be performed using the deformation rate of 250 mm/min. The latter was required for the silicon rubber, natural rubber and some resistance bands, where the gripper was not able to hold the material during the entirety of the test. In addition to the previous two deformation rates, a third one of 50 mm/min is used whenever possible. In summary, most of the materials are tested using at least two out of the three deformation rates of 50, 250 and 500 mm/min, to account for the deformation rate dependency, during the modelling stage, expected in the stress-strain curve of elastomers. The exact number of tests performed to each material is summarized in Table \ref{tab:tensile_tests}.
+The tensile strength test performed in this work is in accordance with the Standard Test Method for Vulcanized Rubbers - Tension (ASTM D412) \cite{astmd412}. In here, it is recommended to elongate the material specimen until failure using a deformation rate of 500 mm/min, whenever possible. However, under certain circumstances where the previous deformation rate is not suitable, the test can be performed using the deformation rate of 250 mm/min. The latter was required for the silicon rubber, natural rubber and some resistance bands, where the gripper was not able to hold the material during the entirety of the test. In addition to the previous two deformation rates, a third one of 50 mm/min is used whenever possible. In summary, most of the materials are tested using at least two out of the three deformation rates of 50, 250 and 500 mm/min, to account for the deformation rate dependency, during the modelling stage, expected in the stress-strain curve of elastomers. The exact number of tests performed to each material is summarized in Table \ref{tbl:tensile_tests}.
 
-\begin{table}[!t]
+\begin{table}[t]
     \centering
     \caption{Type and quantity of the different tensile strength tests performed. All the resistance bands are made of 100 \% Natural Rubber and are color coding depending on their stiffness.}
     \begin{tabular}{|C{0.3\textwidth}||C{0.2\textwidth}|C{0.1\textwidth}|C{0.1\textwidth}|C{0.1\textwidth}|}
@@ -110,7 +110,7 @@ The tensile strength test performed in this work is in accordance with the Stand
     100\% Natural - Orange  & 1.32, 1.49 & 0 & 5 & 0\\
     \hline
     \end{tabular}
-    \label{tab:tensile_tests}
+    \label{tbl:tensile_tests}
 \end{table}
 
 One of the main parameters to extract from the obtained stress-strain curves is the elastic limit of each material. As previously mentioned in Section \ref{mechprop}, this parameter dictates the maximum amount of deformation a material can sustain without losing the ability to fully recover its original shape, i.e. its elasticity. Commonly, the proportional limit is used to approximate the location of the elastic limit, and by extension, the location of the elastic region. The proportional limit is the point in the curve where the proportionality between stress and stress becomes non-linear. It can be safely assumed that the elastic region of the material is located below this point. However, most elastomers do not have a clear elastic region due to their non-linear stress-strain curve, hence the proportional limit cannot be obtained. Under this circumstance, the elastic region of the material can be approximated using the yield strength of the material. The latter is defined as the first point in the curve where an increment in strain happens without and increment in the stress, hence the slope becomes zero or even negative \cite{astmd638}. In the scenario where the yield strength is difficult to extract, which is the case for most elastomers, the offset yield strength can be used as an alternative.
@@ -276,7 +276,7 @@ Furthermore, the elastic properties extracted from the stress-strain curves are 
 \end{figure}
 
 %Specimen Length used in the file Materials Properties has to be updated to 33 instead of 25
-\begin{table}[]
+\begin{table}[ht!]
     \centering
     \begin{tabular}{c|c}
          &  \\
@@ -324,7 +324,7 @@ The experimental data obtained from the tests is processed in Matlab to filter o
 
 \subsection{Tensile Strength Test}
 
-Finally, the mechanical properties of the human quadriceps tendon (Schatzmann, Brunner and Stäubli, 1998) and of the six soft materials are compiled and compared in ADDTABLE. In this table, the difference between the cross-sectional area of the human tendon and the materials is highlighted and reflected in the difference between their mechanical properties. However, even by matching the human tendon cross-sectional area, the current soft materials are not able to match its strength. The latter is discussed in detail in section 3.
+Finally, the mechanical properties of the human quadriceps tendon (Schatzmann, Brunner and St{\"a}ubli, 1998) and of the six soft materials are compiled and compared in ADDTABLE. In this table, the difference between the cross-sectional area of the human tendon and the materials is highlighted and reflected in the difference between their mechanical properties. However, even by matching the human tendon cross-sectional area, the current soft materials are not able to match its strength. The latter is discussed in detail in section 3.
 
 \subsection{Stress Relaxation Test}
 
