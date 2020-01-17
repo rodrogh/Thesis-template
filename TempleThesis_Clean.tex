@@ -13,6 +13,7 @@
               {./Chapters/Chapter_3/Chapter_3_Fig/}
               {./Chapters/Chapter_4/Chapter_4_Fig/}
               {./Chapters/Chapter_5/Chapter_5_Fig/}
+              {./Appendix1/Appendix1_Fig/}
               {./ThesisFigs/}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,8 +72,12 @@
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage[ruled,vlined]{algorithm2e}
-
-
+\usepackage{cleveref}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{enumitem}
+\usepackage{rotating}
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 %User Definitions
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 

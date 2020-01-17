@@ -57,7 +57,8 @@
 \usepackage[UKenglish]{babel}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage[perpage]{footmisc}
-\usepackage[square, sort, numbers, authoryear,sort&compress]{natbib}
+% \usepackage[square, sort, numbers, authoryear,sort&compress]{natbib}
+\usepackage[square, sort, numbers, sort&compress]{natbib}
 \usepackage{ifthen}
 \usepackage{ifpdf}
 %\usepackage[tight]{subfigure}
