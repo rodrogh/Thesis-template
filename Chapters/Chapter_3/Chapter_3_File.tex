@@ -57,7 +57,7 @@ Hysteresis in a material is defined as the mechanical energy dissipated as heat 
 
 The Mullin's effect is another important phenomenon in the mechanical behaviour of elastomers. This effect refer to the breakage of tense molecular chains resulted from the manufacturing process of the material. Therefore, the very first time the material is subjected to deformations it exhibits a larger stress response in comparison to consecutive deformations. The latter is also referred to as a weakening of the material. This effect is more dramatic than the stress relaxation but can be easily avoided when preconditioning the material. Having defined the expected mechanical properties of elastomers, the mechanical tests of tensile strength and stress relaxation are described in the following section.
 
-\section{Characterization Process}
+\section{Characterization Process} \label{sec:CharacterizationProcess}
 
 In this section, the mechanical tests of tensile strength and stress relaxation, performed as part of the characterization process, are described. The tests are performed in an Instron 3369 Dual Column Testing System equipped with a 50 kN load cell, at room temperature (25 \degree{} C). The experimental data is expected to contain some noise due to the accuracy limitations of the available load cell. The algorithm implemented to filter this noise is described in SECTION . As previously mentioned, the elastomers selected for this research are: Polyethylene Rubber, Ethylene Polypropylene, Natural Rubber with Polyester, Natural Rubber, Silicone Rubber, Fluorocarbon Rubber, and Nitrile Rubber. All the materials come in rectangular sheet form. Laser cutting was used to extract individual specimens from each material sheet with the layout illustrated in \Cref{fig:specimenLayout}, as recommended in the Standard Test Method for Vulcanized Rubbers - Tension (ASTM D412) \cite{astmd412}. Finally, all the specimens were preconditioned prior to testing by applying a small deformation to them.
 
@@ -83,11 +83,11 @@ The tensile strength test performed in this work is in accordance with the Stand
      & mm & mm/min & mm/min & mm/min \\
     \hline
     Ethylene Polypropylene   &  1.5 & 16 & - & 5\\
-    Fluorocarbon              &  1.5 & 9 & 8 & 5\\
-    Natural with Polyester   &  1.5 & 10 & 5 & -\\
-    Nitrile                   &  1.5 & 7 & 7 & 5\\
-    Silicone                  &  1.5 & 13 & 7 & 3\\
-    Polyethylene              &  6 & 12 & 7 & 5\\
+    Fluorocarbon              &  1.5 & 8 & 8 & 5\\
+    Natural with Polyester   &  1.5 & 11 & 5 & 1\\
+    Nitrile                   &  1.5 & 8 & 7 & 6\\
+    Silicone                  &  1.5 & 15 & 7 & -\\
+    Polyethylene              &  6 & 13 & 7 & 1\\
     \hline
     Natural - Yellow  & 0.33, 0.42 & 1 & 6 & 1\\
     Natural - Red  & 0.48, 0.52 & - & 8 & -\\
@@ -474,7 +474,7 @@ Similarly to the tensile strength tests, the collected data was processed prior 
 
 \subsubsection{Stress Relaxation Properties}
 
-The stress relaxation test is useful for approximating the time relaxation constants of the materials. Commonly, viscoelastic materials have more than one relaxation constant. This is caused by the many number of internal molecular chains which relax at different rates. The stress relaxation curve of viscoelastic materials exhibit a decaying exponential stress relaxation curve. This known mathematical function, in combination with the LVMs, can be used to approximate the time relaxation constants of the material. The LVMs have the flexibility to get as complex as required by adding extra elements to the model. This latter means that the number of relaxation constants that can be extracted from the stress relaxation curve is directly proportional to the number of exponential functions contained in the LVM. This is described in detail in \Cref{sec:ModellingLVM}.
+The stress relaxation test is useful for approximating the time relaxation constants of the materials. Commonly, viscoelastic materials have more than one relaxation constant. This is caused by the many number of internal molecular chains which relax at different rates. The stress relaxation curve of viscoelastic materials exhibit a decaying exponential stress relaxation curve. This known mathematical function, in combination with the LVMs, can be used to approximate the time relaxation constants of the material. The LVMs have the flexibility to get as complex as required by adding extra elements to the model. This latter means that the number of relaxation constants that can be extracted from the stress relaxation curve is directly proportional to the number of exponential functions contained in the LVM. This is described in detail in \Cref{sec:ChapterModellingLVM}.
 
 The stress at the starting and ending point of the test,  $\sigma_o$ and $\sigma_{end}$ respectively, are the minimum required parameters to approximate one relaxation constant of the material using a LVM. The achieved stress relaxation is defined by, $S.R. = 100(\sigma_o - \sigma_{end}/\sigma_o)$. Hence, the extracted properties of the materials are compiled in \Cref{tbl:stressRelProperties}. Also, the obtained stress relaxation curves of all the materials are illustrated in \Cref{fig:AllSRel,fig:PRSRel}.
 
